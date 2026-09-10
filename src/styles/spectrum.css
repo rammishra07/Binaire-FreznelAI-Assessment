@@ -1,0 +1,234 @@
+/* Adobe Spectrum Design System - CSS Tokens & Styling */
+
+:root {
+  /* Spectrum Color System - Dark Mode Default */
+  --spectrum-global-color-gray-50: #1d1d1d;
+  --spectrum-global-color-gray-75: #252525;
+  --spectrum-global-color-gray-100: #2f2f2f;
+  --spectrum-global-color-gray-200: #3b3b3b;
+  --spectrum-global-color-gray-300: #4a4a4a;
+  --spectrum-global-color-gray-400: #5c5c5c;
+  --spectrum-global-color-gray-500: #707070;
+  --spectrum-global-color-gray-600: #8e8e8e;
+  --spectrum-global-color-gray-700: #b3b3b3;
+  --spectrum-global-color-gray-800: #d8d8d8;
+  --spectrum-global-color-gray-900: #ffffff;
+
+  --spectrum-blue-400: #2680eb;
+  --spectrum-blue-500: #1473e6;
+  --spectrum-blue-600: #0d66d0;
+  --spectrum-green-400: #2d9d78;
+  --spectrum-green-500: #12805c;
+  --spectrum-red-400: #e34850;
+  --spectrum-red-500: #d7373f;
+  --spectrum-amber-400: #e68619;
+  --spectrum-amber-500: #cb6f10;
+  --spectrum-purple-400: #9d4edd;
+  --spectrum-seafoam-400: #1b9aaa;
+
+  --spectrum-bg: #141414;
+  --spectrum-surface-elevated: #1e1e1e;
+  --spectrum-surface-layer: #262626;
+  --spectrum-border-color: #383838;
+  --spectrum-text-primary: #f5f5f5;
+  --spectrum-text-secondary: #a3a3a3;
+  --spectrum-text-muted: #737373;
+
+  /* Typography */
+  --spectrum-font-family: 'Adobe Clean', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Ubuntu, sans-serif;
+  --spectrum-font-mono: 'Source Code Pro', Monaco, Consolas, monospace;
+
+  /* Radius & Shadows */
+  --spectrum-radius-sm: 4px;
+  --spectrum-radius-md: 8px;
+  --spectrum-radius-lg: 12px;
+  --spectrum-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+  --spectrum-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
+  --spectrum-shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.spectrum-light {
+  --spectrum-bg: #f8f9fa;
+  --spectrum-surface-elevated: #ffffff;
+  --spectrum-surface-layer: #f0f2f5;
+  --spectrum-border-color: #e1e4e8;
+  --spectrum-text-primary: #1f2328;
+  --spectrum-text-secondary: #57606a;
+  --spectrum-text-muted: #8c959f;
+
+  --spectrum-global-color-gray-50: #ffffff;
+  --spectrum-global-color-gray-100: #f6f8fa;
+  --spectrum-global-color-gray-200: #eaeef2;
+  --spectrum-global-color-gray-300: #d0d7de;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--spectrum-bg);
+  color: var(--spectrum-text-primary);
+  font-family: var(--spectrum-font-family);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--spectrum-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--spectrum-global-color-gray-400);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--spectrum-global-color-gray-500);
+}
+
+/* Spectrum Buttons */
+.spectrum-Button {
+  font-family: var(--spectrum-font-family);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--spectrum-radius-sm);
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.15s ease-in-out;
+  outline: none;
+  user-select: none;
+}
+
+.spectrum-Button--primary {
+  background-color: var(--spectrum-blue-500);
+  color: #ffffff;
+}
+.spectrum-Button--primary:hover {
+  background-color: var(--spectrum-blue-400);
+}
+.spectrum-Button--primary:active {
+  background-color: var(--spectrum-blue-600);
+}
+
+.spectrum-Button--secondary {
+  background-color: var(--spectrum-surface-layer);
+  color: var(--spectrum-text-primary);
+  border-color: var(--spectrum-border-color);
+}
+.spectrum-Button--secondary:hover {
+  background-color: var(--spectrum-global-color-gray-200);
+}
+
+.spectrum-Button--outline {
+  background: transparent;
+  color: var(--spectrum-blue-400);
+  border: 1px solid var(--spectrum-blue-400);
+}
+.spectrum-Button--outline:hover {
+  background: rgba(38, 128, 235, 0.1);
+}
+
+/* Spectrum Textfields */
+.spectrum-Textfield {
+  font-family: var(--spectrum-font-family);
+  font-size: 14px;
+  background-color: var(--spectrum-surface-layer);
+  color: var(--spectrum-text-primary);
+  border: 1px solid var(--spectrum-border-color);
+  border-radius: var(--spectrum-radius-sm);
+  padding: 9px 14px;
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.spectrum-Textfield:focus {
+  border-color: var(--spectrum-blue-400);
+  box-shadow: 0 0 0 2px rgba(38, 128, 235, 0.3);
+}
+
+/* Spectrum Cards */
+.spectrum-Card {
+  background-color: var(--spectrum-surface-elevated);
+  border: 1px solid var(--spectrum-border-color);
+  border-radius: var(--spectrum-radius-md);
+  padding: 16px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.spectrum-Card:hover {
+  transform: translateY(-2px);
+  border-color: var(--spectrum-blue-400);
+  box-shadow: var(--spectrum-shadow-md);
+}
+
+/* Spectrum Tags / Pills */
+.spectrum-Tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 3px 8px;
+  border-radius: 12px;
+  background-color: var(--spectrum-surface-layer);
+  border: 1px solid var(--spectrum-border-color);
+  color: var(--spectrum-text-secondary);
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.15s ease;
+}
+.spectrum-Tag:hover {
+  color: var(--spectrum-text-primary);
+  border-color: var(--spectrum-blue-400);
+}
+.spectrum-Tag--active {
+  background-color: var(--spectrum-blue-500);
+  color: #ffffff;
+  border-color: var(--spectrum-blue-500);
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+.status-badge--online {
+  background-color: rgba(45, 157, 120, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(45, 157, 120, 0.3);
+}
+.status-badge--offline {
+  background-color: rgba(227, 72, 80, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(227, 72, 80, 0.3);
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.status-dot--online {
+  background-color: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+}
+.status-dot--offline {
+  background-color: #ef4444;
+  box-shadow: 0 0 8px #ef4444;
+}
